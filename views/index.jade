@@ -1,0 +1,22 @@
+extends layout
+block content
+    main.main
+        section.intro
+            if message
+                h3.indexmes #{message}
+            //如果用户登录或者注册成功并且没有在登录状态下点击注册或者登录
+            if success&&user
+                h1.welcome #{success}，欢迎 #{user} 来到 MyBlog
+            else if !success&&user
+                h1.welcome 欢迎 #{user} 来到 MYBlog
+            else
+                h1.welcome 欢迎来到 MyBlog
+            h4.tech	MYBlog是一个基于Node.js, 使用express4以及MongoDB搭建起来的blog系统, 是对网上一个教程的Blog的重构。
+            p.btnlist
+                if user
+                    a.login(href='/logout') 退出
+                    a.userlink(href='/users/#{user}') 发表文章
+                else
+                    a.login(href='/login') 登录
+                    a.register(href='/reg') 立即注册
+        

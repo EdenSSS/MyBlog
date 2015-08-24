@@ -1,0 +1,23 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  bodybcp
+        nav.header
+            ul.list
+                li.logo
+                    a(href='/') MyBlog
+                li
+                    a(href='/') 首页
+                li
+                    a(href='/login') 登录
+                li
+                    a(href='/reg') 注册
+         div.container
+             block content
+             hr
+             footer.footer
+                 p
+                     a(href='http://www.sysu.edu.cn') Eden
+                     | @2015
